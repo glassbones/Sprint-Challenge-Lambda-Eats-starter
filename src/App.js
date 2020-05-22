@@ -1,11 +1,28 @@
-import React from "react";
+import React from 'react';
+import './App.css';
+import Form from './components/Form'
+import {Route, Switch, Link} from 'react-router-dom'
 
-const App = () => {
+export default function App() {
   return (
-    <>
-      <h1>Lambda Eats</h1>
-      <p>You can remove this code and create your own header</p>
-    </>
-  );
-};
-export default App;
+    <div 
+    className="App" 
+    style={{
+      display:'flex', 
+      justifyContent: 'center', 
+      alignItems: 'center',
+      height: '100vh'}}>
+      
+      <Switch>
+        <Route
+          path="/" 
+          exact>
+            <Link to={`/pizza`}> <button>Order Pizza</button> </Link>
+          </Route>
+          <Route 
+          path="/pizza" 
+          component= {Form}/>
+      </Switch>
+    </div>
+  )
+}
