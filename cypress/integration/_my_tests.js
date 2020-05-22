@@ -1,7 +1,14 @@
+
 describe('Form inputs', () => {
     it('can navigate to the site', ()=>{
         cy.visit('http://localhost:3000')
     })
+
+    it('can navigate to form', ()=>{
+        cy.get('button')
+        .click()
+        cy.get('#name')
+    }) 
 
     it('cannot submit without input data', ()=>{
         cy.get('button')
@@ -47,5 +54,5 @@ describe('Form inputs', () => {
         .click()
         cy.get('pre')
     }) 
-    
 })
+
